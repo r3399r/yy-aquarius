@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  public title: string = 'hermes-frontend';
+  public title: string = '星遊';
+
+  constructor() {
+    document.title = this.title;
+  }
 }

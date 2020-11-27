@@ -1,61 +1,43 @@
-<p>home works!!</p>
-<ion-button color="primary">Primary</ion-button>
-<ion-button color="secondary">Secondary</ion-button>
-<ion-button color="tertiary">Tertiary</ion-button>
-<ion-button color="success">Success</ion-button>
-<ion-button color="warning">Warning</ion-button>
-<ion-button color="danger">Danger</ion-button>
-<ion-button color="light">Light</ion-button>
-<ion-button color="medium">Medium</ion-button>
-<ion-button color="dark">Dark</ion-button>
-<ion-button shape="round">Round Button</ion-button>
-<div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
-  <h3 class="uk-card-title">Default</h3>
-  <p>
-    Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed
-    do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  </p>
+<div class="homePage">
+  <h1>星遊活動</h1>
+  <div class="card1 uk-box-shadow-medium">
+    <div class="title">目的</div>
+    <div
+      class="uk-child-width-1-3"
+      uk-grid
+      uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 500"
+    >
+      <div class="target">
+        <img class="icon" src="assets/sync-circle.svg" />
+        <div>增加星兒更多的社會互動</div>
+      </div>
+      <div class="target">
+        <img class="icon" src="assets/musical-notes.svg" />
+        <div>提供家長適時的喘息服務</div>
+      </div>
+      <div class="target">
+        <img class="icon" src="assets/happy.svg" />
+        <div>提供想認識星兒的人互動機會</div>
+      </div>
+    </div>
+  </div>
+  <div class="card2 uk-box-shadow-medium">
+    <div class="title">活動形式</div>
+    <div
+      uk-scrollspy="target: > div; cls: uk-animation-slide-right-small; delay: 500"
+    >
+      <div class="block1">
+        <h4>與家人同行</h4>
+        <p>
+          邀請哥哥姐姐一同與星兒及其家人出遊。出遊時哥哥姐姐可以作為家長的幫手，家長可讓哥哥姐姐與星兒多互動，同時也可以藉此認識哥哥姐姐。
+        </p>
+      </div>
+      <div class="block2">
+        <h4>與星兒出遊</h4>
+        <p>
+          讓星兒單獨跟哥哥姐姐出去玩，家長可以獲得充分的休息。同行的哥哥姐姐之一必須曾經與家人同行，且家長有一定熟悉度的人。
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
-  <h3 class="uk-card-title">Default</h3>
-  <p>
-    Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed
-    do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  </p>
-</div>
-<div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
-  <h3 class="uk-card-title">Default</h3>
-  <p>
-    Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed
-    do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  </p>
-</div>
-<div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
-  <h3 class="uk-card-title">Default</h3>
-  <p>
-    Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed
-    do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  </p>
-</div>
-<div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
-  <h3 class="uk-card-title">Default</h3>
-  <p>
-    Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed
-    do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  </p>
-</div>
-<div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
-  <h3 class="uk-card-title">Default</h3>
-  <p>
-    Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed
-    do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  </p>
-</div>
-<div
-  class="uk-card uk-card-default uk-card-body"
-  uk-scrollspy="cls: uk-animation-slide-left; repeat: true"
->
-  <h3 class="uk-card-title">Left</h3>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-</div>
-<button class="uk-button" (click)="onClick()">go to child</button>

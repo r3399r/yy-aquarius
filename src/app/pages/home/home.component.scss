@@ -1,0 +1,38 @@
+.homePage {
+  padding-top: 20px;
+}
+.card1 {
+  border-radius: 12px;
+  margin: 0 15px 15px 15px;
+  padding: 10px;
+  .target {
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    .icon {
+      max-height: 60px;
+    }
+  }
+}
+.card2 {
+  border-radius: 12px;
+  margin: 0 15px 15px 15px;
+  padding: 10px;
+  .block1 {
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #fff3f3;
+  }
+  .block2 {
+    border-radius: 6px;
+    padding: 10px;
+    background: #fffff3;
+  }
+}
+.title {
+  font-size: 24px;
+}
+.blockTitle {
+  font-weight: bold;
+}

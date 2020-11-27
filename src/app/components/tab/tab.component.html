@@ -1,0 +1,46 @@
+<div class="tab">
+  <div class="uk-child-width-1-4" uk-grid>
+    <div>
+      <div
+        class="tabs uk-box-shadow-medium"
+        (click)="onClickTab('home')"
+        [ngClass]="getRouterUrl() === 'home' ? 'activate' : 'deactivate'"
+      >
+        <img class="icon" src="assets/home.svg" />
+        <div class="field">主頁</div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="tabs uk-box-shadow-medium"
+        (click)="onClickTab('child')"
+        [ngClass]="getRouterUrl() === 'child' ? 'activate' : 'deactivate'"
+      >
+        <img class="icon" src="assets/partly-sunny.svg" />
+        <div class="field">出遊清單</div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="tabs uk-box-shadow-medium"
+        (click)="onClickTab('my-partner')"
+        [ngClass]="getRouterUrl() === 'my-partner' ? 'activate' : 'deactivate'"
+      >
+        <img class="icon" src="assets/people.svg" />
+        <div class="field">我的夥伴</div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="tabs uk-box-shadow-medium"
+        (click)="onClickTab('user-profile')"
+        [ngClass]="
+          getRouterUrl() === 'user-profile' ? 'activate' : 'deactivate'
+        "
+      >
+        <img class="icon" src="assets/grid.svg" />
+        <div class="field">個人資料</div>
+      </div>
+    </div>
+  </div>
+</div>

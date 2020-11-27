@@ -8,20 +8,26 @@ import {
 import { LayoutComponent } from 'src/app/components/layout/layout.component';
 import { ChildComponent } from 'src/app/pages/child/child.component';
 import { HomeComponent } from 'src/app/pages/home/home.component';
-import { LandingComponent } from 'src/app/pages/landing/landing.component';
+import { LoginComponent } from 'src/app/pages/login/login.component';
+import { MyPartnerComponent } from 'src/app/pages/my-partner/my-partner.component';
+import { UserProfileComponent } from 'src/app/pages/user-profile/user-profile.component';
 
 const rootRoute: Route = {
   path: '',
-  redirectTo: 'welcome',
+  redirectTo: 'home',
   pathMatch: 'full',
 };
 const wildcardRoute: Route = {
   path: '**',
-  redirectTo: 'welcome',
+  redirectTo: 'home',
   pathMatch: 'full',
 };
 
 // Route children
+const loginRoute: Route = {
+  path: 'login',
+  component: LoginComponent,
+};
 const homeRoute: Route = {
   path: 'home',
   component: HomeComponent,
@@ -30,19 +36,28 @@ const childRoute: Route = {
   path: 'child',
   component: ChildComponent,
 };
+const myPartnerRoute: Route = {
+  path: 'my-partner',
+  component: MyPartnerComponent,
+};
+const userProfileRoute: Route = {
+  path: 'user-profile',
+  component: UserProfileComponent,
+};
 
-// Route
+// private and public Route
 const privateRoute: Route = {
   path: '',
   component: LayoutComponent,
-  children: [homeRoute, childRoute],
+  children: [childRoute, myPartnerRoute, userProfileRoute],
 };
-const landingRoute: Route = {
-  path: 'welcome',
-  component: LandingComponent,
+const publicRoute: Route = {
+  path: '',
+  component: LayoutComponent,
+  children: [homeRoute, loginRoute],
 };
 
-const routes: Routes = [rootRoute, landingRoute, privateRoute, wildcardRoute];
+const routes: Routes = [rootRoute, publicRoute, privateRoute, wildcardRoute];
 
 @NgModule({
   imports: [
