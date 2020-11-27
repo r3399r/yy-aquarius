@@ -5,6 +5,7 @@ import {
   RouterModule,
   Routes,
 } from '@angular/router';
+import { AuthGuard } from 'src/app/auth.guard';
 import { LayoutComponent } from 'src/app/components/layout/layout.component';
 import { ChildComponent } from 'src/app/pages/child/child.component';
 import { HomeComponent } from 'src/app/pages/home/home.component';
@@ -48,6 +49,7 @@ const userProfileRoute: Route = {
 // private and public Route
 const privateRoute: Route = {
   path: '',
+  canActivate: [AuthGuard],
   component: LayoutComponent,
   children: [childRoute, myPartnerRoute, userProfileRoute],
 };
