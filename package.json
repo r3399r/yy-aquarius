@@ -17,7 +17,8 @@
     "build": "ng build --prod",
     "pre:dev": "run-s clean fix build test:headless",
     "pre:commit": "run-s clean lint test:headless",
-    "deploy": "npm run build && aws s3 sync ./www s3://{{S3_BUCKET_NAME}} --size-only"
+    "sync:s3": "aws s3 sync ./dist s3://yy-aquarius",
+    "deploy": "run-s clean build sync:s3"
   },
   "dependencies": {
     "@angular/animations": "~11.0.0",
