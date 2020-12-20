@@ -29,12 +29,7 @@ export class HomeComponent implements OnInit {
         if (params.state === this.lineAuthService.getState()) {
           const result: boolean = await this.lineAuthService.login(params.code);
 
-          let message: string;
-          if (result) {
-            message = '登入成功';
-          } else {
-            message = '登入失敗';
-          }
+          const message: string = result ? '登入成功' : '登入失敗';
 
           const toast = await this.toastController.create({
             message,

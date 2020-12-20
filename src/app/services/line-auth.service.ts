@@ -16,9 +16,7 @@ export class LineAuthService {
 
   private readonly authorizationUrl: string =
     'https://access.line.me/oauth2/v2.1/authorize';
-  private readonly accessTokenApiUrl: string =
-    'https://api.line.me/oauth2/v2.1/token';
-  private readonly refreshTokenApiUrl: string =
+  private readonly lineOauthApiUrl: string =
     'https://api.line.me/oauth2/v2.1/token';
 
   constructor(http: HttpClient) {
@@ -50,7 +48,7 @@ export class LineAuthService {
         .set('refresh_token', refreshToken);
 
       const refreshedlineToken: LineToken = await this.http
-        .post<LineToken>(this.refreshTokenApiUrl, body, {
+        .post<LineToken>(this.lineOauthApiUrl, body, {
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         })
         .toPromise();
@@ -73,7 +71,7 @@ export class LineAuthService {
         .set('grant_type', 'authorization_code');
 
       const lineToken: LineToken = await this.http
-        .post<LineToken>(this.accessTokenApiUrl, body, {
+        .post<LineToken>(this.lineOauthApiUrl, body, {
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         })
         .toPromise();
