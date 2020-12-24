@@ -10,7 +10,6 @@ import { TabComponent } from 'src/app/components/tab/tab.component';
 import { ChildComponent } from 'src/app/pages/child/child.component';
 import { HomeComponent } from 'src/app/pages/home/home.component';
 import { LoginComponent } from 'src/app/pages/login/login.component';
-import { MyPartnerComponent } from 'src/app/pages/my-partner/my-partner.component';
 import { UserProfileComponent } from 'src/app/pages/user-profile/user-profile.component';
 import { environment } from 'src/environments/environment';
 
@@ -21,7 +20,6 @@ import { environment } from 'src/environments/environment';
     HomeComponent,
     ChildComponent,
     TabComponent,
-    MyPartnerComponent,
     UserProfileComponent,
     LoginComponent,
   ],

@@ -10,7 +10,6 @@ import { LayoutComponent } from 'src/app/components/layout/layout.component';
 import { ChildComponent } from 'src/app/pages/child/child.component';
 import { HomeComponent } from 'src/app/pages/home/home.component';
 import { LoginComponent } from 'src/app/pages/login/login.component';
-import { MyPartnerComponent } from 'src/app/pages/my-partner/my-partner.component';
 import { UserProfileComponent } from 'src/app/pages/user-profile/user-profile.component';
 
 const rootRoute: Route = {
@@ -37,10 +36,6 @@ const childRoute: Route = {
   path: 'child',
   component: ChildComponent,
 };
-const myPartnerRoute: Route = {
-  path: 'my-partner',
-  component: MyPartnerComponent,
-};
 const userProfileRoute: Route = {
   path: 'user-profile',
   component: UserProfileComponent,
@@ -51,7 +46,7 @@ const privateRoute: Route = {
   path: '',
   canActivate: [AuthGuard],
   component: LayoutComponent,
-  children: [childRoute, myPartnerRoute, userProfileRoute],
+  children: [childRoute, userProfileRoute],
 };
 const publicRoute: Route = {
   path: '',

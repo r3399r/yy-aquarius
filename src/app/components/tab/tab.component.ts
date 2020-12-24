@@ -16,7 +16,7 @@ export class TabComponent implements OnInit {
   ngOnInit(): void {}
 
   public getRouterUrl(): string {
-    return this.router.url.split('/')[1];
+    return this.router.url.split('/')[1].split('?')[0];
   }
 
   public async onClickTab(route: string): Promise<void> {
