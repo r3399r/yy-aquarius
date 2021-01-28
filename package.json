@@ -17,8 +17,10 @@
     "build": "ng build --prod",
     "pre:dev": "run-s clean fix build test:headless",
     "pre:commit": "run-s clean lint test:headless",
-    "sync:s3": "aws s3 sync ./dist s3://yy-aquarius",
-    "deploy": "run-s clean build sync:s3"
+    "sync:dev": "aws s3 sync ./dist s3://yy-aquarius-dev",
+    "sync:prod": "aws s3 sync ./dist s3://yy-aquarius-prod",
+    "deploy:dev": "run-s clean build sync:dev",
+    "deploy:prod": "run-s clean build sync:prod"
   },
   "dependencies": {
     "@angular/animations": "~11.0.0",
