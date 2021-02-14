@@ -15,6 +15,7 @@
     },
     "array-type": false,
     "arrow-return-shorthand": true,
+    "ban-types": false,
     "component-class-suffix": true,
     "component-selector": [
       true,
@@ -23,7 +24,7 @@
       "kebab-case"
     ],
     "contextual-lifecycle": true,
-    "curly": true,
+    "curly": [true, "as-needed"],
     "deprecation": {
       "severity": "warning"
     },
@@ -36,6 +37,7 @@
     ],
     "eofline": true,
     "export-name": false,
+    "function-name": false,
     "import-blacklist": [
       true,
       "rxjs/Rx"
@@ -46,6 +48,7 @@
         "spaces"
       ]
     },
+    "insecure-random": false,
     "linebreak-style": [
       true,
       "LF"
@@ -66,16 +69,10 @@
         ]
       }
     ],
+    "newline-before-return": true,
     "no-backbone-get-set-outside-model": false,
     "no-conflicting-lifecycle": true,
-    "no-console": [
-      true,
-      "debug",
-      "info",
-      "time",
-      "timeEnd",
-      "trace"
-    ],
+    "no-console": [true, "log"],
     "no-empty": false,
     "no-host-metadata-property": true,
     "no-inferrable-types": false,
@@ -118,7 +115,6 @@
     "template-no-negated-async": true,
     "typedef": [
       true,
-      "arrow-call-signature",
       "arrow-parameter",
       "call-signature",
       "paramter",

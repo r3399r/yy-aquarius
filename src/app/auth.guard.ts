@@ -16,11 +16,10 @@ export class AuthGuard implements CanActivate {
 
   public async canActivate(): Promise<boolean> {
     const result: boolean = await this.lineAuthService.isAuth();
-    if (result) {
-      return true;
-    }
+    if (result) return true;
 
     this.router.navigate(['login']);
+
     return false;
   }
 }

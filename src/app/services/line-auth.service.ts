@@ -36,9 +36,7 @@ export class LineAuthService {
     const accessToken: string | null = localStorage.getItem('access_token');
     const refreshToken: string | null = localStorage.getItem('refresh_token');
 
-    if (accessToken === null) {
-      return false;
-    }
+    if (accessToken === null) return false;
 
     try {
       const body: HttpParams = new HttpParams()
@@ -55,6 +53,7 @@ export class LineAuthService {
 
       localStorage.setItem('access_token', refreshedlineToken.access_token);
       localStorage.setItem('refresh_token', refreshedlineToken.refresh_token);
+
       return true;
     } catch {
       return false;
