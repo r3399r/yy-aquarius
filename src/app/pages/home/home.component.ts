@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
             message,
             duration: 3000,
           });
-          toast.present();
+          await toast.present();
         }
       }
     );
