@@ -6,6 +6,7 @@ import { IonicModule } from '@ionic/angular';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { AppComponent } from 'src/app/app.component';
 import { LayoutComponent } from 'src/app/components/layout/layout.component';
+import { SpinnerComponent } from 'src/app/components/spinner/spinner.component';
 import { TabComponent } from 'src/app/components/tab/tab.component';
 import { ChildComponent } from 'src/app/pages/child/child.component';
 import { HomeComponent } from 'src/app/pages/home/home.component';
@@ -22,6 +23,7 @@ import { environment } from 'src/environments/environment';
     TabComponent,
     UserProfileComponent,
     LoginComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,

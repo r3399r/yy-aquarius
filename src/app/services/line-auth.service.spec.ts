@@ -43,7 +43,7 @@ describe('LineAuthService', (): void => {
 
   it('getLink() should work', (): void => {
     expect(service.getLink()).toEqual(
-      'https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1654301960&redirect_uri=http://localhost:4200/home&state=12345abcde&scope=profile'
+      'https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1655679061&redirect_uri=http://localhost:4200/home&state=12345abcde&scope=profile&bot_prompt=aggressive'
     );
   });
 

@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LineToken } from 'src/app/model/LineToken';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -10,10 +11,6 @@ export class LineAuthService {
   private readonly link: string;
 
   private readonly state: string = '12345abcde';
-  private readonly clientId: string = '1654301960';
-  private readonly redirectUri: string = 'http://localhost:4200/home';
-  private readonly channelSecret: string = '05695afa950c29994b1040599b0b1e51';
-
   private readonly authorizationUrl: string =
     'https://access.line.me/oauth2/v2.1/authorize';
   private readonly lineOauthApiUrl: string =
@@ -21,7 +18,7 @@ export class LineAuthService {
 
   constructor(http: HttpClient) {
     this.http = http;
-    this.link = `${this.authorizationUrl}?response_type=code&client_id=${this.clientId}&redirect_uri=${this.redirectUri}&state=${this.state}&scope=profile`;
+    this.link = `${this.authorizationUrl}?response_type=code&client_id=${environment.clientId}&redirect_uri=${environment.redirectUri}&state=${this.state}&scope=profile&bot_prompt=aggressive`;
   }
 
   public getLink(): string {
@@ -40,8 +37,8 @@ export class LineAuthService {
 
     try {
       const body: HttpParams = new HttpParams()
-        .set('client_id', this.clientId)
-        .set('client_secret', this.channelSecret)
+        .set('client_id', environment.clientId)
+        .set('client_secret', environment.channelSecret)
         .set('grant_type', 'refresh_token')
         .set('refresh_token', refreshToken);
 
@@ -64,9 +61,9 @@ export class LineAuthService {
     try {
       const body: HttpParams = new HttpParams()
         .set('code', code)
-        .set('redirect_uri', this.redirectUri)
-        .set('client_id', this.clientId)
-        .set('client_secret', this.channelSecret)
+        .set('redirect_uri', environment.redirectUri)
+        .set('client_id', environment.clientId)
+        .set('client_secret', environment.channelSecret)
         .set('grant_type', 'authorization_code');
 
       const lineToken: LineToken = await this.http

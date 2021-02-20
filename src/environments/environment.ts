@@ -4,6 +4,11 @@
 
 export const environment = {
   production: false,
+
+  // line-auth
+  clientId: '1655679061',
+  redirectUri: 'http://localhost:4200/home',
+  channelSecret: 'c415146bb6ebdd99de1ff383ec560721',
 };
 
 /*

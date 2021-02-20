@@ -14,13 +14,14 @@
     "fix": "run-s fix:*",
     "e2e": "ng e2e",
     "clean": "del-cli dist -f",
-    "build": "ng build --prod",
+    "build:dev": "ng build",
+    "build:prod": "ng build --prod",
     "pre:dev": "run-s clean fix build test:headless",
     "pre:commit": "run-s clean lint test:headless",
     "sync:dev": "aws s3 sync ./dist s3://sadalsuud-dev",
     "sync:prod": "aws s3 sync ./dist s3://sadalsuud-prod",
-    "deploy:dev": "run-s clean build sync:dev",
-    "deploy:prod": "run-s clean build sync:prod"
+    "deploy:dev": "run-s clean build:dev sync:dev",
+    "deploy:prod": "run-s clean build:prod sync:prod"
   },
   "dependencies": {
     "@angular/animations": "~11.0.0",
