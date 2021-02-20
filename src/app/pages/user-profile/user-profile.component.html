@@ -16,8 +16,10 @@
     </div>
   </div>
   <div class="uk-divider-small"></div>
-  <button class="uk-button btn">編輯個人資料</button>
-  <div class="user-id">{{ lineUserProfile.userId }}</div>
+  <div class="edit-button">
+    <ion-button color="light">編輯個人資料</ion-button>
+  </div>
+  <div class="user-id">ID: {{ lineUserProfile.userId }}</div>
   <div uk-grid>
     <div class="uk-width-auto">LINE名稱</div>
     <div class="uk-width-expand right">{{ lineUserProfile.displayName }}</div>
