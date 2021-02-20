@@ -8,6 +8,7 @@ import { AppComponent } from 'src/app/app.component';
 import { LayoutComponent } from 'src/app/components/layout/layout.component';
 import { SpinnerComponent } from 'src/app/components/spinner/spinner.component';
 import { TabComponent } from 'src/app/components/tab/tab.component';
+import { EventDetailComponent } from 'src/app/pages/event-detail/event-detail.component';
 import { EventListComponent } from 'src/app/pages/event-list/event-list.component';
 import { HomeComponent } from 'src/app/pages/home/home.component';
 import { LoginComponent } from 'src/app/pages/login/login.component';
@@ -24,6 +25,7 @@ import { environment } from 'src/environments/environment';
     UserProfileComponent,
     LoginComponent,
     SpinnerComponent,
+    EventDetailComponent,
   ],
   imports: [
     BrowserModule,

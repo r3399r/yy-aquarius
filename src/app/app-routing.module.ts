@@ -7,6 +7,7 @@ import {
 } from '@angular/router';
 import { AuthGuard } from 'src/app/auth.guard';
 import { LayoutComponent } from 'src/app/components/layout/layout.component';
+import { EventDetailComponent } from 'src/app/pages/event-detail/event-detail.component';
 import { EventListComponent } from 'src/app/pages/event-list/event-list.component';
 import { HomeComponent } from 'src/app/pages/home/home.component';
 import { LoginComponent } from 'src/app/pages/login/login.component';
@@ -32,9 +33,13 @@ const homeRoute: Route = {
   path: 'home',
   component: HomeComponent,
 };
-const childRoute: Route = {
+const eventListRoute: Route = {
   path: 'event-list',
   component: EventListComponent,
+};
+const eventDetailRoute: Route = {
+  path: 'event-detail/:id',
+  component: EventDetailComponent,
 };
 const userProfileRoute: Route = {
   path: 'user-profile',
@@ -46,7 +51,7 @@ const privateRoute: Route = {
   path: '',
   canActivate: [AuthGuard],
   component: LayoutComponent,
-  children: [childRoute, userProfileRoute],
+  children: [eventListRoute, eventDetailRoute, userProfileRoute],
 };
 const publicRoute: Route = {
   path: '',

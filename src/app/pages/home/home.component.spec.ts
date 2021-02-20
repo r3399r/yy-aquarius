@@ -6,42 +6,40 @@ import { of } from 'rxjs';
 import { HomeComponent } from 'src/app/pages/home/home.component';
 import { LineAuthService } from 'src/app/services/line-auth.service';
 
-describe('HomeComponent', (): void => {
+describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
   let lineAuthServiceSpy: jasmine.SpyObj<LineAuthService>;
   let toastControllerSpy: jasmine.Spy;
 
-  beforeEach(
-    async (): Promise<void> => {
-      const routeStub: any = {
-        queryParams: of({ code: 'testCode', state: 'testState' }),
-      };
-      lineAuthServiceSpy = jasmine.createSpyObj('LineAuthService', [
-        'getState',
-        'login',
-      ]);
-      toastControllerSpy = spyOn(ToastController.prototype, 'create');
+  beforeEach(async () => {
+    const routeStub: any = {
+      queryParams: of({ code: 'testCode', state: 'testState' }),
+    };
+    lineAuthServiceSpy = jasmine.createSpyObj('LineAuthService', [
+      'getState',
+      'login',
+    ]);
+    toastControllerSpy = spyOn(ToastController.prototype, 'create');
 
-      await TestBed.configureTestingModule({
-        declarations: [HomeComponent],
-        imports: [RouterTestingModule],
-        providers: [
-          { provide: LineAuthService, useValue: lineAuthServiceSpy },
-          { provide: ActivatedRoute, useValue: routeStub },
-        ],
-      }).compileComponents();
+    await TestBed.configureTestingModule({
+      declarations: [HomeComponent],
+      imports: [RouterTestingModule],
+      providers: [
+        { provide: LineAuthService, useValue: lineAuthServiceSpy },
+        { provide: ActivatedRoute, useValue: routeStub },
+      ],
+    }).compileComponents();
 
-      fixture = TestBed.createComponent(HomeComponent);
-      component = fixture.componentInstance;
-    }
-  );
+    fixture = TestBed.createComponent(HomeComponent);
+    component = fixture.componentInstance;
+  });
 
-  it('should create', (): void => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('ngOnInit with correct params and login succeeds', async (): Promise<void> => {
+  it('ngOnInit with correct params and login succeeds', async () => {
     lineAuthServiceSpy.getState.and.returnValue('testState');
     lineAuthServiceSpy.login.and.resolveTo(true);
 
@@ -54,7 +52,7 @@ describe('HomeComponent', (): void => {
     });
   });
 
-  it('ngOnInit with correct params but login fails', async (): Promise<void> => {
+  it('ngOnInit with correct params but login fails', async () => {
     lineAuthServiceSpy.getState.and.returnValue('testState');
     lineAuthServiceSpy.login.and.resolveTo(false);
 
@@ -67,7 +65,7 @@ describe('HomeComponent', (): void => {
     });
   });
 
-  it('ngOnInit without params', async (): Promise<void> => {
+  it('ngOnInit without params', async () => {
     lineAuthServiceSpy.getState.and.returnValue('');
 
     await component.ngOnInit();

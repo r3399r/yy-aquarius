@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-event-list',
@@ -6,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./event-list.component.scss'],
 })
 export class EventListComponent implements OnInit {
-  constructor() {}
+  private router: Router;
+
+  constructor(router: Router) {
+    this.router = router;
+  }
 
   ngOnInit(): void {}
+
+  public onClickCard(): any {
+    this.router.navigate(['event-detail/123']);
+  }
 }
