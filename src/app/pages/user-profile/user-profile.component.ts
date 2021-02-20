@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LineUserProfile } from 'src/app/model/LineUserProfile';
+import { LineService } from 'src/app/services/line.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -6,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-profile.component.scss'],
 })
 export class UserProfileComponent implements OnInit {
-  constructor() {}
+  private lineService: LineService;
+  public lineUserProfile: LineUserProfile;
 
-  ngOnInit(): void {}
+  constructor(lineService: LineService) {
+    this.lineService = lineService;
+  }
+
+  async ngOnInit(): Promise<void> {
+    this.lineUserProfile = await this.lineService.getUserProfile();
+  }
 }

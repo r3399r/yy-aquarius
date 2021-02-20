@@ -7,7 +7,7 @@ import { LineAuthService } from 'src/app/services/line-auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  public externalLink: string;
+  public lineLoginUrl: string;
   private lineAuthService: LineAuthService;
 
   constructor(lineAuthService: LineAuthService) {
@@ -15,6 +15,6 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.externalLink = this.lineAuthService.getLink();
+    this.lineLoginUrl = this.lineAuthService.getLink();
   }
 }

@@ -1,2 +1,14 @@
-<p>login works!</p>
-<a href="{{ externalLink }}"> Example External Link </a>
+<div class="login-page">
+  <h1>登入</h1>
+  <p>此功能需要登入後才能使用。</p>
+  <p>
+    為了大家方便，此平台使用 LINE
+    的帳號進行管理，不需另外註冊新帳號。登入後我們只能夠取得您設定的 LINE 名稱及
+    LINE 公司提供的內部名稱，其餘資料如手機、好友名單、LINE
+    ID...等，我們都拿不到，請放心使用。
+  </p>
+  <p>請點擊以下圖示以進入 LINE 登入頁面，成功登入後便會自動跳回此網站。</p>
+  <a href="{{ lineLoginUrl }}"
+    ><img class="icon" src="assets/line-messenger.svg"
+  /></a>
+</div>

@@ -3,6 +3,10 @@ $global-font-family: 'Lato', 'Noto Sans TC', 'Noto Sans SC', sans-serif;
 $grid-gutter-horizontal: 0;
 $grid-gutter-horizontal-l: 0;
 
+// divider
+$divider-small-width: 100%;
+$divider-margin-vertical: 12px;
+
 // 2. Import default variables and available mixins.
 @import 'uikit/src/scss/variables-theme.scss';
 @import 'uikit/src/scss/mixins-theme.scss';

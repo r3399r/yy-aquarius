@@ -1,1 +1,34 @@
-<p>user-profile works!</p>
+<app-spinner *ngIf="!lineUserProfile"></app-spinner>
+<div class="user-page" *ngIf="lineUserProfile">
+  <h1>個人資料</h1>
+  <div uk-grid>
+    <div class="uk-width-auto">
+      <img
+        class="user-picture"
+        src="{{ lineUserProfile.pictureUrl }}"
+        alt=""
+        width="80"
+        height="80"
+      />
+    </div>
+    <div class="uk-width-expand">
+      <div class="card">有任何問題歡迎隨時傳訊息給 Line 官方帳號</div>
+    </div>
+  </div>
+  <div class="uk-divider-small"></div>
+  <button class="uk-button btn">編輯個人資料</button>
+  <div class="user-id">{{ lineUserProfile.userId }}</div>
+  <div uk-grid>
+    <div class="uk-width-auto">LINE名稱</div>
+    <div class="uk-width-expand right">{{ lineUserProfile.displayName }}</div>
+  </div>
+  <div uk-grid>
+    <div class="uk-width-auto">姓名</div>
+    <div class="uk-width-expand right">王小明</div>
+  </div>
+  <div uk-grid>
+    <div class="uk-width-auto">E-mail</div>
+    <div class="uk-width-expand right">abcde@gmail.com</div>
+  </div>
+  <div class="uk-divider-small"></div>
+</div>
