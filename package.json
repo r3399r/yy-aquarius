@@ -18,8 +18,8 @@
     "build:prod": "ng build --prod",
     "pre:dev": "run-s clean fix build test:headless",
     "pre:commit": "run-s clean lint test:headless",
-    "sync:dev": "aws s3 sync ./dist s3://sadalsuud-dev",
-    "sync:prod": "aws s3 sync ./dist s3://sadalsuud-prod",
+    "sync:dev": "aws s3 sync ./dist s3://sadalsuud-dev --delete --cache-control max-age=0",
+    "sync:prod": "aws s3 sync ./dist s3://sadalsuud-prod --delete --cache-control max-age=0",
     "deploy:dev": "run-s clean build:dev sync:dev",
     "deploy:prod": "run-s clean build:prod sync:prod"
   },

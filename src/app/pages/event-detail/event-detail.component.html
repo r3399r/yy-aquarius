@@ -1,1 +1,30 @@
-<div>{{ eventId }}</div>
+<div class="detail-page">
+  <h1>出遊詳情</h1>
+  <div uk-grid>
+    <div class="uk-width-auto bold">日期</div>
+    <div class="uk-width-expand right">{{ event.date }}</div>
+  </div>
+  <div uk-grid>
+    <div class="uk-width-auto bold">集合時間</div>
+    <div class="uk-width-expand right">{{ event.startTime }}</div>
+  </div>
+  <div uk-grid>
+    <div class="uk-width-auto bold">結束時間</div>
+    <div class="uk-width-expand right">{{ event.endTime }}</div>
+  </div>
+  <div uk-grid>
+    <div class="uk-width-auto bold">集合地點</div>
+    <div class="uk-width-expand right">{{ event.where }}</div>
+  </div>
+  <div class="uk-divider-small"></div>
+  <div uk-grid>
+    <div class="uk-width-auto bold">召集人</div>
+    <div class="uk-width-expand right">{{ event.who }}</div>
+  </div>
+  <div class="uk-divider-small"></div>
+  <div class="description">{{ event.description }}</div>
+  <div class="uk-divider-small"></div>
+  <div class="edit-button">
+    <ion-button color="primary" expand="block">我要報名參加</ion-button>
+  </div>
+</div>

@@ -16,6 +16,6 @@ export class EventListComponent implements OnInit {
   ngOnInit(): void {}
 
   public onClickCard(): any {
-    this.router.navigate(['event-detail/123']);
+    this.router.navigate(['event-detail/177BFEFF52BA1']);
   }
 }

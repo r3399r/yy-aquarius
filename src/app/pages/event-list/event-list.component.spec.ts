@@ -27,6 +27,6 @@ describe('EventListComponent', () => {
   it('onClickCard() should work', async () => {
     await component.onClickCard();
     expect(routerSpy).toHaveBeenCalledTimes(1);
-    expect(routerSpy).toHaveBeenCalledWith(['event-detail/123']);
+    expect(routerSpy).toHaveBeenCalledWith(['event-detail/177BFEFF52BA1']);
   });
 });

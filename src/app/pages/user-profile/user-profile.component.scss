@@ -2,12 +2,11 @@
   padding: 10px 15px 15px 15px;
 }
 .card {
-  height: 80px;
   box-sizing: border-box;
   border-radius: 6px;
-  padding: 5px 10px;
+  padding: 5px;
   margin-left: 10px;
-  border: 2px dashed #b35600;
+  border: 1px dashed #b35600;
   background-color: #fff2e1;
 }
 .edit-button {
@@ -19,6 +18,9 @@
 .user-id {
   font-size: 12px;
   color: #b3b3b3;
+}
+.bold {
+  font-weight: bold;
 }
 .right {
   text-align: right;

@@ -3,6 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { of, throwError } from 'rxjs';
 import { LineToken } from 'src/app/model/LineToken';
 import { LineAuthService } from 'src/app/services/line-auth.service';
+import { environment } from 'src/environments/environment';
 
 describe('LineAuthService', () => {
   let service: LineAuthService;
@@ -40,7 +41,7 @@ describe('LineAuthService', () => {
 
   it('getLink() should work', () => {
     expect(service.getLink()).toEqual(
-      'https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1655679061&redirect_uri=http://localhost:4200/home&state=12345abcde&scope=profile&bot_prompt=aggressive'
+      `https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=${environment.clientId}&redirect_uri=${environment.redirectUri}&state=12345abcde&scope=profile&bot_prompt=aggressive`
     );
   });
 

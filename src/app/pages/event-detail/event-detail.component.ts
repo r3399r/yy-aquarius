@@ -9,6 +9,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class EventDetailComponent implements OnInit {
   private activatedRoute: ActivatedRoute;
   public eventId: string;
+  public event: any;
 
   constructor(activatedRoute: ActivatedRoute) {
     this.activatedRoute = activatedRoute;
@@ -17,6 +18,14 @@ export class EventDetailComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params: Params) => {
       this.eventId = params.id;
+      this.event = {
+        date: '2021/02/28(日)',
+        startTime: '09:00',
+        endTime: '14:00',
+        where: '捷運大湖公園站1號出口',
+        who: '台大自閉星雨服務團',
+        description: '讓我們走走步道，然後賞櫻吧!',
+      };
     });
   }
 }
