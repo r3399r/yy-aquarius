@@ -11,24 +11,23 @@
         height="80"
       />
     </div>
-    <div class="uk-width-expand">
-      <div class="card">有任何問題歡迎隨時傳訊息給 Line 官方帳號</div>
+    <div class="uk-width-expand card" uk-grid>
+      <div class="uk-width-3-4">有任何問題歡迎隨時傳訊息給 Line 官方帳號</div>
+      <div class="uk-width-1-4">
+        <a href="https://lin.ee/IdbKMOe"
+          ><img src="assets/line-messenger.svg" alt="加入好友"
+        /></a>
+      </div>
     </div>
   </div>
   <div class="uk-divider-small"></div>
-  <button class="uk-button btn">編輯個人資料</button>
-  <div class="user-id">{{ lineUserProfile.userId }}</div>
+  <div class="edit-button">
+    <ion-button color="light">編輯個人資料</ion-button>
+  </div>
+  <div class="user-id">ID: {{ lineUserProfile.userId }}</div>
   <div uk-grid>
-    <div class="uk-width-auto">LINE名稱</div>
+    <div class="uk-width-auto bold">LINE名稱</div>
     <div class="uk-width-expand right">{{ lineUserProfile.displayName }}</div>
-  </div>
-  <div uk-grid>
-    <div class="uk-width-auto">姓名</div>
-    <div class="uk-width-expand right">王小明</div>
-  </div>
-  <div uk-grid>
-    <div class="uk-width-auto">E-mail</div>
-    <div class="uk-width-expand right">abcde@gmail.com</div>
   </div>
   <div class="uk-divider-small"></div>
 </div>

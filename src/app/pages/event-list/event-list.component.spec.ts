@@ -1,24 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { TabComponent } from 'src/app/components/tab/tab.component';
+import { EventListComponent } from 'src/app/pages/event-list/event-list.component';
 
-describe('TabComponent', () => {
-  let component: TabComponent;
-  let fixture: ComponentFixture<TabComponent>;
+describe('EventListComponent', () => {
+  let component: EventListComponent;
+  let fixture: ComponentFixture<EventListComponent>;
   let routerSpy: jasmine.Spy;
 
   beforeEach(async () => {
     routerSpy = spyOn(Router.prototype, 'navigate');
-
     await TestBed.configureTestingModule({
-      declarations: [TabComponent],
+      declarations: [EventListComponent],
       imports: [RouterTestingModule],
     }).compileComponents();
-  });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(TabComponent);
+    fixture = TestBed.createComponent(EventListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -27,9 +24,9 @@ describe('TabComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('onClickTab() should work', async () => {
-    await component.onClickTab('test');
+  it('onClickCard() should work', async () => {
+    await component.onClickCard();
     expect(routerSpy).toHaveBeenCalledTimes(1);
-    expect(routerSpy).toHaveBeenCalledWith(['test']);
+    expect(routerSpy).toHaveBeenCalledWith(['event-detail/177BFEFF52BA1']);
   });
 });
