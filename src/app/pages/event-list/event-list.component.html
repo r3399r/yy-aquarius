@@ -1,22 +1,16 @@
-<div class="event-page">
+<app-spinner *ngIf="!trips"></app-spinner>
+<div class="event-page" *ngIf="trips">
   <h1>出遊清單</h1>
   <div>欲報名出遊或瀏覽出遊詳情，請點擊卡片</div>
-  <div class="card uk-box-shadow-medium" uk-grid (click)="onClickCard()">
-    <div class="uk-width-1-2 bold">2021/02/28(日)</div>
-    <div class="uk-width-1-2 bold">09:00-14:00</div>
-    <div class="uk-width-1-1">地點: 內湖白石湖吊橋</div>
-    <div class="uk-width-1-1">一起走步道，沿途賞櫻拍照</div>
-  </div>
-  <div class="card uk-box-shadow-medium" uk-grid>
-    <div class="uk-width-1-2 bold">2021/03/01(一)</div>
-    <div class="uk-width-1-2 bold">09:00-14:00</div>
-    <div class="uk-width-1-1">地點: 淡水輕軌</div>
-    <div class="uk-width-1-1">搭輕軌逛百貨公司</div>
-  </div>
-  <div class="card uk-box-shadow-medium" uk-grid>
-    <div class="uk-width-1-2 bold">2021/03/02(二)</div>
-    <div class="uk-width-1-2 bold">09:00-14:00</div>
-    <div class="uk-width-1-1">地點: 兒童新樂園</div>
-    <div class="uk-width-1-1">玩沙</div>
+  <div
+    *ngFor="let trip of trips"
+    class="card uk-box-shadow-medium"
+    uk-grid
+    (click)="onClickCard(trip.id)"
+  >
+    <div class="uk-width-1-2 bold">{{ trip.date }}</div>
+    <div class="uk-width-1-2 bold">{{ trip.startDate }}~{{ trip.endDate }}</div>
+    <div class="uk-width-1-1">地點: {{ trip.place }}</div>
+    <div class="uk-width-1-1">{{ trip.shortDesc }}</div>
   </div>
 </div>
