@@ -9,7 +9,7 @@ export const environment = {
   // line-auth
   clientId: '1655679061',
   redirectUri: 'https://d1tr4ax897kn7u.cloudfront.net/home',
-  // redirectUri: 'http://192.168.0.18:4200/home',
+  // redirectUri: 'http://localhost:4200/home',
   channelSecret: 'c415146bb6ebdd99de1ff383ec560721',
 };
 

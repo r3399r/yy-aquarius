@@ -1,5 +1,5 @@
-<app-spinner *ngIf="!trip"></app-spinner>
-<div class="detail-page" *ngIf="trip">
+<app-spinner *ngIf="isPageLoading()"></app-spinner>
+<div class="detail-page" *ngIf="!isPageLoading()">
   <h1>出遊詳情</h1>
   <div uk-grid>
     <div class="uk-width-auto bold">日期</div>
@@ -45,7 +45,17 @@
   <div class="uk-divider-small"></div>
   <div class="description">{{ trip.detailedDesc }}</div>
   <div class="uk-divider-small"></div>
-  <div class="edit-button">
-    <ion-button color="primary" expand="block">我要報名參加</ion-button>
+  <div *ngIf="!canRegister()">
+    <ion-button color="primary" expand="block" disabled
+      >我要報名參加</ion-button
+    >
+    <div class="warning">
+      您尚未登入或尚未加入官方帳號為好友，可點擊右下角的「個人資料」以登入與加入好友
+    </div>
+  </div>
+  <div *ngIf="canRegister()">
+    <ion-button color="primary" expand="block" (click)="onRegister()"
+      >我要報名參加</ion-button
+    >
   </div>
 </div>

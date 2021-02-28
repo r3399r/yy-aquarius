@@ -15,6 +15,8 @@ export class LineAuthService {
     'https://access.line.me/oauth2/v2.1/authorize';
   private readonly lineOauthApiUrl: string =
     'https://api.line.me/oauth2/v2.1/token';
+  private readonly friendshipStatusUrl: string =
+    'https://api.line.me/friendship/v1/status';
 
   constructor(http: HttpClient) {
     this.http = http;
@@ -76,6 +78,22 @@ export class LineAuthService {
       localStorage.setItem('refresh_token', lineToken.refresh_token);
 
       return true;
+    } catch {
+      return false;
+    }
+  }
+
+  public async isFriend(): Promise<boolean> {
+    try {
+      const accessToken: string | null = localStorage.getItem('access_token');
+
+      const res: { friendFlag: boolean } = await this.http
+        .get<{ friendFlag: boolean }>(this.friendshipStatusUrl, {
+          headers: { Authorization: `Bearer ${accessToken}` },
+        })
+        .toPromise();
+
+      return res.friendFlag;
     } catch {
       return false;
     }

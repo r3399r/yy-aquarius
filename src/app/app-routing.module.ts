@@ -51,12 +51,12 @@ const privateRoute: Route = {
   path: '',
   canActivate: [AuthGuard],
   component: LayoutComponent,
-  children: [eventListRoute, eventDetailRoute, userProfileRoute],
+  children: [userProfileRoute],
 };
 const publicRoute: Route = {
   path: '',
   component: LayoutComponent,
-  children: [homeRoute, loginRoute],
+  children: [homeRoute, loginRoute, eventListRoute, eventDetailRoute],
 };
 
 const routes: Routes = [rootRoute, publicRoute, privateRoute, wildcardRoute];
