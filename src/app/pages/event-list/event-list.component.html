@@ -6,7 +6,7 @@
     *ngFor="let trip of trips"
     class="card uk-box-shadow-medium"
     uk-grid
-    (click)="onClickCard(trip.id)"
+    (click)="onClickCard(trip.creationId)"
   >
     <div class="uk-width-1-2 bold">{{ trip.date }}</div>
     <div class="uk-width-1-2 bold">{{ trip.startDate }}~{{ trip.endDate }}</div>
