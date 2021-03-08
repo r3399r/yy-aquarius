@@ -4,10 +4,12 @@
 
 export const environment = {
   production: false,
+  apiUrl: 'https://pxt9qcn9z6.execute-api.ap-northeast-1.amazonaws.com/dev',
 
   // line-auth
   clientId: '1655679061',
   redirectUri: 'https://d1tr4ax897kn7u.cloudfront.net/home',
+  // redirectUri: 'http://localhost:4200/home',
   channelSecret: 'c415146bb6ebdd99de1ff383ec560721',
 };
 

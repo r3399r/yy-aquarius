@@ -1,30 +1,61 @@
-<div class="detail-page">
+<app-spinner *ngIf="isPageLoading()"></app-spinner>
+<div class="detail-page" *ngIf="!isPageLoading()">
   <h1>出遊詳情</h1>
   <div uk-grid>
     <div class="uk-width-auto bold">日期</div>
-    <div class="uk-width-expand right">{{ event.date }}</div>
+    <div class="uk-width-expand right">{{ trip.date }}</div>
   </div>
   <div uk-grid>
     <div class="uk-width-auto bold">集合時間</div>
-    <div class="uk-width-expand right">{{ event.startTime }}</div>
+    <div class="uk-width-expand right">{{ trip.startDate }}</div>
   </div>
   <div uk-grid>
     <div class="uk-width-auto bold">結束時間</div>
-    <div class="uk-width-expand right">{{ event.endTime }}</div>
+    <div class="uk-width-expand right">{{ trip.endDate }}</div>
+  </div>
+  <div uk-grid>
+    <div class="uk-width-auto bold">出遊地點</div>
+    <div class="uk-width-expand right">{{ trip.place }}</div>
   </div>
   <div uk-grid>
     <div class="uk-width-auto bold">集合地點</div>
-    <div class="uk-width-expand right">{{ event.where }}</div>
+    <div class="uk-width-expand right">{{ trip.meetPlace }}</div>
   </div>
   <div class="uk-divider-small"></div>
   <div uk-grid>
-    <div class="uk-width-auto bold">召集人</div>
-    <div class="uk-width-expand right">{{ event.who }}</div>
+    <div class="uk-width-auto bold">費用</div>
+    <div class="uk-width-expand right">${{ trip.fee }}</div>
+  </div>
+  <div uk-grid *ngIf="trip.thingsToBring">
+    <div class="uk-width-auto bold">應帶物品</div>
+    <div class="uk-width-expand right">{{ trip.thingsToBring }}</div>
+  </div>
+  <div uk-grid>
+    <div class="uk-width-auto bold">參與人</div>
+    <div class="uk-width-expand right">{{ trip.participants.join() }}</div>
+  </div>
+  <div uk-grid>
+    <div class="uk-width-auto bold">是否需家人陪同</div>
+    <div class="uk-width-expand right">{{ trip.needFamilyAccompany }}</div>
+  </div>
+  <div uk-grid>
+    <div class="uk-width-auto bold">可報名名額</div>
+    <div class="uk-width-expand right">{{ trip.quota }}</div>
   </div>
   <div class="uk-divider-small"></div>
-  <div class="description">{{ event.description }}</div>
+  <div class="description">{{ trip.detailedDesc }}</div>
   <div class="uk-divider-small"></div>
-  <div class="edit-button">
-    <ion-button color="primary" expand="block">我要報名參加</ion-button>
+  <div *ngIf="!canSign()">
+    <ion-button color="primary" expand="block" disabled
+      >我要報名參加</ion-button
+    >
+    <div class="warning">
+      您尚未登入或尚未加入官方帳號為好友，可點擊右下角的「個人資料」以登入與加入好友
+    </div>
+  </div>
+  <div *ngIf="canSign()">
+    <ion-button color="primary" expand="block" (click)="onSign()"
+      >我要報名參加</ion-button
+    >
   </div>
 </div>
