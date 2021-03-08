@@ -10,6 +10,7 @@ import { LineService } from 'src/app/services/line.service';
 export class UserProfileComponent implements OnInit {
   private lineService: LineService;
   public lineUserProfile: LineUserProfile;
+  public user: any;
 
   constructor(lineService: LineService) {
     this.lineService = lineService;
@@ -17,5 +18,6 @@ export class UserProfileComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     this.lineUserProfile = await this.lineService.getUserProfile();
+    this.user = await this.lineService.getUser(this.lineUserProfile.userId);
   }
 }

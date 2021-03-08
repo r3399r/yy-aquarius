@@ -21,13 +21,21 @@
     </div>
   </div>
   <div class="uk-divider-small"></div>
-  <!-- <div class="edit-button">
-    <ion-button color="light">編輯個人資料</ion-button>
-  </div> -->
-  <div class="user-id">ID: {{ lineUserProfile.userId }}</div>
   <div uk-grid>
     <div class="uk-width-auto bold">LINE名稱</div>
     <div class="uk-width-expand right">{{ lineUserProfile.displayName }}</div>
+  </div>
+  <div uk-grid>
+    <div class="uk-width-auto bold">姓名</div>
+    <div class="uk-width-expand right">{{ user.name }}</div>
+  </div>
+  <div uk-grid>
+    <div class="uk-width-auto bold">身份</div>
+    <div class="uk-width-expand right">{{ user.role }}</div>
+  </div>
+  <div uk-grid>
+    <div class="uk-width-auto bold">生日</div>
+    <div class="uk-width-expand right">{{ user.birthday }}</div>
   </div>
   <div class="uk-divider-small"></div>
 </div>
